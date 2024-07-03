@@ -21,7 +21,13 @@ hyper = { version = "1.3.1", features = ["full"] }
 hyper-util = { version = "0.1.5", features = ["full"] }
 http-body-util = "0.1.2"
 hyper-tls = "0.6.0"
-clap = { version = "4.5.8", features = ["help", "usage", "error-context", "std", "derive"], default_features = false }
+clap = { version = "4.5.8", features = [
+    "help",
+    "usage",
+    "error-context",
+    "std",
+    "derive",
+], default_features = false }
 termcolor = "1.3.0"
 is-terminal = "0.4.10"
 serde = { version = "1.0.203", features = ["derive"] }
@@ -34,3 +40,7 @@ percent-encoding = "^2.1.0"
 futures-util = "0.3.30"
 torrent_search = "0.3"
 yts-api = "0.4"
+
+[[bin]]
+name = "trylib"
+path = "src/trylib.rs"
