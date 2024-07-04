@@ -79,9 +79,9 @@ impl SearchProvider for TorrentCsvSearch {
 }
 
 fn parse_torrent_csv(content: &str) -> Result<Vec<Torrent>, Box<dyn Error + Send + Sync>> {
-    let entries: Response = serde_json::from_str(content)?;
+    let res: Response = serde_json::from_str(content)?;
 
-    let results = entries
+    let results = res
         .torrents
         .iter()
         .map(|entry| Torrent {
