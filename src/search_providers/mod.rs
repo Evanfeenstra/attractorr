@@ -23,7 +23,7 @@ pub enum SearchProviderId {
 }
 
 #[async_trait]
-pub trait SearchProvider {
+pub trait SearchProvider: Send + Sync {
     async fn search(&self, term: &str) -> Result<Vec<Torrent>, Box<dyn Error + Send + Sync>>;
     fn get_name(&self) -> &'static str;
 }
